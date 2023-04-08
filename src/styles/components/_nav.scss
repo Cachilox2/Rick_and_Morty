@@ -1,0 +1,47 @@
+.nav {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 1.3rem 1.3rem 0.2rem 1rem;
+  background-color: #222;
+  position: relative;
+
+  &__logo {
+    width: 16rem;
+  }
+
+  &__link {
+    display: inline-block;
+    color: #d1faf4;
+    font-size: 1.3rem;
+    margin: 0 25px;
+    letter-spacing: 3px;
+    transition: 0.3s;
+  }
+
+  &__log-out {
+    box-shadow: inset 0px 1px 0px 0px #cf866c;
+    background: linear-gradient(to bottom, #d0451b 5%, #bc3315 100%);
+    background-color: #d0451b;
+    border-radius: 3px;
+    border: 1px solid #942911;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 0.9rem;
+    padding: 6px 24px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #854629;
+
+    &:hover {
+      background: linear-gradient(to bottom, #bc3315 5%, #d0451b 100%);
+      background-color: #bc3315;
+    }
+
+    &:active {
+      position: relative;
+      top: 1px;
+    }
+  }
+}

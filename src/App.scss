@@ -7,5 +7,12 @@
 .cardContainer {
    display: flex;
    flex-wrap: wrap;
-   margin-top: 3rem;
+   gap: 2rem;
+}
+
+.container {
+   margin: 3rem auto;
+   max-width: 1200px;
+   padding: 1em;
+   width: 100%;
 }

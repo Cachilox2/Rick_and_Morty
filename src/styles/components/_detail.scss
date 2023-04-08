@@ -1,0 +1,51 @@
+.loading {
+    min-height: 75vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.detail {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    font-family: sans-serif;
+
+    background-image: url("https://imgs.search.brave.com/ILXBuNqQet3qYKHMrMsZufT3VWqmKPGxRpQob7bOFHs/rs:fit:1200:1200:1/g:ce/aHR0cHM6Ly9nZXQu/d2FsbGhlcmUuY29t/L3Bob3RvL3JlbmRl/ci1zcGFjZS1zdGFy/cy1zcGFjZS1hcnQt/bmVidWxhLW9yYW5n/ZS1hdG1vc3BoZXJl/LXVuaXZlcnNlLVR5/bGVyQ3JlYXRlc1dv/cmxkcy1vdXRlci1z/cGFjZS1hc3Ryb25v/bWljYWwtb2JqZWN0/LTE1NzA2Ni5qcGc");
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 79.6vh;
+
+    &__img {
+        display: flex;
+        min-width: 60%;
+        border-radius: 50%;
+        align-self: center;
+        justify-self: center;
+        display: block;
+    }
+    
+    &__information {
+        display: flex;
+        align-items: center;
+        // justify-content: center;
+        min-height: 50%;
+        flex-direction: column;        
+        color: white;
+        background-color: rgba(36, 33, 33, 0.795);
+
+        h2 {
+           margin: 4rem 0 6rem 0; 
+           font-size: 4rem;
+        }
+
+        p {
+            margin: 0.5rem;
+            font-size: 1.6rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+        }
+
+    }
+}

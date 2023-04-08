@@ -1,0 +1,74 @@
+
+.form-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-image: url("https://fondosmil.com/fondo/27341.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(90deg, rgba(109, 49, 199, 0.795) 0%, rgba(204, 125, 211, 0.829) 35%, rgba(126, 26, 93, 0.801) 100%);
+    border-radius: 10px;
+    text-align: center;
+    padding: 20px 20px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+
+    &__rick {
+        width: 20rem;
+    }
+
+    &__label {
+        font-size: 1.2rem;
+        color: #111;
+        margin-bottom: 0.55rem;
+        font-weight: 600;
+    }
+    &__label:nth-of-type(2) {
+        margin-top: 0.65rem;
+    }
+
+    &__input {
+        outline: none;
+        padding: 0 5px;
+        font-family: 18px;
+        margin: 0 1rem 0.4rem 1rem;
+        height: 1.65rem;
+    }
+    &__button {
+        width: 60%;
+        margin: 0.65rem auto 0;
+        box-shadow:inset 0px 1px 0px 0px #e184f3;
+	background:linear-gradient(to bottom, #c123de 5%, #a20dbd 100%);
+	background-color:#c123de;
+        border-radius:3px;
+        border:1px solid #0b0e07;
+        display:inline-block;
+        font-weight: bold;
+        cursor:pointer;
+        color:#ffffff;
+        font-size: 1.1rem;
+        padding:8px 18px;
+        text-decoration:none;
+        text-shadow:0px 1px 0px #9b14b3;
+
+        &:hover {
+            background:linear-gradient(to bottom, #a20dbd 5%, #c123de 100%);
+            background-color:#a20dbd;
+        }
+        &:active {
+            position:relative;
+            top:1px;
+        }
+    }
+
+    &__danger {
+        color: rgb(216, 22, 22);
+        font-size: 0.85rem;
+    }
+}
