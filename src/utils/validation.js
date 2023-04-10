@@ -1,4 +1,3 @@
-
 const validation = (inputs) => {
     const errors = {}
 

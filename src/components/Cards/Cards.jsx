@@ -1,10 +1,10 @@
 import Card from "../Card/Card";
 
 export default function Cards({ characters, onClose }) {
-
+  let arr = Object.values(characters)
   return (
     <>
-      {characters.map((item) => {
+      {arr.map((item) => {
         const { id, name, status, species, gender, origin, image } = item;
         return (
           <div key={id}>
@@ -20,7 +20,7 @@ export default function Cards({ characters, onClose }) {
             />
           </div>
         );
-      })}
+      })} 
     </>
   );
 }
