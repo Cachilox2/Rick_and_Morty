@@ -12,10 +12,11 @@
     grid-template-columns: 1fr 1fr;
     font-family: sans-serif;
 
-    background-image: url("https://imgs.search.brave.com/ILXBuNqQet3qYKHMrMsZufT3VWqmKPGxRpQob7bOFHs/rs:fit:1200:1200:1/g:ce/aHR0cHM6Ly9nZXQu/d2FsbGhlcmUuY29t/L3Bob3RvL3JlbmRl/ci1zcGFjZS1zdGFy/cy1zcGFjZS1hcnQt/bmVidWxhLW9yYW5n/ZS1hdG1vc3BoZXJl/LXVuaXZlcnNlLVR5/bGVyQ3JlYXRlc1dv/cmxkcy1vdXRlci1z/cGFjZS1hc3Ryb25v/bWljYWwtb2JqZWN0/LTE1NzA2Ni5qcGc");
+    background-image: url("https://imgs.search.brave.com/0uKl7s15z0XDuRzlwt98Zbz7oid4Eye30tHtlO7ubWY/rs:fit:1200:1000:1/g:ce/aHR0cDovL3d3dy5w/bmdhbGwuY29tL3dw/LWNvbnRlbnQvdXBs/b2Fkcy8yMDE2LzA3/L1NwYWNlLUZyZWUt/UE5HLUltYWdlLnBu/Zw");
     background-repeat: no-repeat;
     background-size: cover;
-    min-height: 79.6vh;
+    background-position: center;
+    min-height: 78vh;
 
     &__img {
         display: flex;
@@ -29,11 +30,10 @@
     &__information {
         display: flex;
         align-items: center;
-        // justify-content: center;
         min-height: 50%;
         flex-direction: column;        
         color: white;
-        background-color: rgba(36, 33, 33, 0.795);
+        background-color: rgba(36, 33, 33, 0.671);
 
         h2 {
            margin: 4rem 0 6rem 0; 

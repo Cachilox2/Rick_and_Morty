@@ -13,7 +13,7 @@
 .form {
     display: flex;
     flex-direction: column;
-    background: linear-gradient(90deg, rgba(109, 49, 199, 0.795) 0%, rgba(204, 125, 211, 0.829) 35%, rgba(126, 26, 93, 0.801) 100%);
+    background: linear-gradient(90deg, rgba(109, 49, 199, 0.671) 0%, rgba(204, 125, 211, 0.692) 35%, rgba(126, 26, 93, 0.699) 100%);
     border-radius: 10px;
     text-align: center;
     padding: 20px 20px;
@@ -44,8 +44,8 @@
         width: 60%;
         margin: 0.65rem auto 0;
         box-shadow:inset 0px 1px 0px 0px #e184f3;
-	background:linear-gradient(to bottom, #c123de 5%, #a20dbd 100%);
-	background-color:#c123de;
+	background:linear-gradient(to bottom, #c223ded5 5%, #a30dbdce 100%);
+	background-color:#c223dee3;
         border-radius:3px;
         border:1px solid #0b0e07;
         display:inline-block;
@@ -68,7 +68,7 @@
     }
 
     &__danger {
-        color: rgb(216, 22, 22);
+        color: rgb(250, 0, 0);
         font-size: 0.85rem;
     }
 }

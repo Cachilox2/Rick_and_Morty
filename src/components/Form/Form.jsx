@@ -12,15 +12,16 @@ const Form = ({ login }) => {
   const [errors, setErrors] = useState({});
 
   const handleChange = (event) => {
+    const {name, value} = event.target
     setUserData({
       ...userData,
-      [event.target.name]: event.target.value,
+      [name]: value,
     });
 
     setErrors(
       validation({
         ...userData,
-        [event.target.name]: event.target.value,
+        [name]: value,
       })
     );
   };
@@ -44,8 +45,7 @@ const Form = ({ login }) => {
           name="email"
           placeholder="Email"
         />
-
-        <p className="form__danger">{errors.email}</p>
+        {errors.email && <p className="form__danger">{errors.email}</p>}
 
         <label className="form__label" htmlFor="password">
           Password
@@ -58,7 +58,7 @@ const Form = ({ login }) => {
           name="password"
           placeholder="Password"
         />
-        <p className="form__danger">{errors.password}</p>
+        {errors.password && <p className="form__danger">{errors.password}</p>}
 
         <button className="form__button" type="submit">
           Submit

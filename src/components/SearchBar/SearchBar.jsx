@@ -8,6 +8,11 @@ const SearchBar = ({ onSearch }) => {
     setId(event.target.value);
   };
 
+  const handleInput = (id) => {
+    setId("");
+    onSearch(id);
+  };
+
   return (
     <div>
       <input
@@ -17,10 +22,7 @@ const SearchBar = ({ onSearch }) => {
         type="search"
       />
 
-      <button
-        className="add-button"
-        onClick={() => onSearch(id)}
-      >
+      <button className="add-button" onClick={() => handleInput(id)}>
         Agregar
       </button>
     </div>

@@ -3,7 +3,7 @@ import Card from "../Card/Card";
 export default function Cards({ characters, onClose }) {
   let arr = Object.values(characters)
   return (
-    <>
+    <div className="cardContainer container">
       {arr.map((item) => {
         const { id, name, status, species, gender, origin, image } = item;
         return (
@@ -21,8 +21,6 @@ export default function Cards({ characters, onClose }) {
           </div>
         );
       })} 
-    </>
+    </div>
   );
 }
-
-// onClose={() => window.alert('Emulamos que se cierra la card')}

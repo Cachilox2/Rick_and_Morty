@@ -4,12 +4,14 @@ import Nav from "./components/Nav/Nav";
 import About from "./components/About/About";
 import Detail from "./components/Detail/Detail";
 import Form from "./components/Form/Form";
+import Favorites from "./components/Favorites/Favorites";
 import { URL_BASE, API_KEY } from "./key";
 
 import { useState, useEffect } from "react";
 import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
-
-// import NotFound from './components/NotFound';
+import { useDispatch } from "react-redux";
+import { removeFav } from "./redux/action";
+import NotFound from './components/NotFound/NotFound';
 
 function App() {
   const [characters, setCharacters] = useState([]);
@@ -19,6 +21,7 @@ function App() {
   const EMAIL = "pedro@gmail.com";
   const PASSWORD = "hola123";
 
+  const dispatch = useDispatch();
   const location = useLocation();
 
   const showNav = location.pathname !== "/";
@@ -37,9 +40,8 @@ function App() {
 
   useEffect(() => {
     !access && navigate("/");
-    
-  }, [access, navigate]);
 
+  }, [access, navigate]);
 
   const onSearch = (id) => {
     fetch(`${URL_BASE}/${id}?key=${API_KEY}`)
@@ -67,7 +69,8 @@ function App() {
   };
 
   const onClose = (id) => {
-    let character = Object.values(characters)
+    dispatch(removeFav(id))
+    let character = Object.values(characters);
     const filter = character.filter((character) => {
       return character.id !== id;
     });
@@ -78,22 +81,19 @@ function App() {
     <div className="App">
       {showNav && <Nav logOut={logOut} onSearch={onSearch} />}
 
-      <Routes>
-        <Route
-          path="/home"
-          element={
-            <div className="cardContainer container">
-              <Cards onClose={onClose} characters={characters} />
-            </div>
-          }
-        />
+      <main>
+        <Routes>
+          <Route path="/home" element={<Cards onClose={onClose} characters={characters} />} />
 
-        <Route path="/about" element={<About />} />
-        <Route path="/detail/:id" element={<Detail />} />
-        <Route path="/" element={<Form login={login} />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/detail/:id" element={<Detail />} />
+          <Route path="/" element={<Form login={login} />} />
+          <Route path="/favorites" element={<Favorites />} />
 
-        {/* <Route path='*' element={<NotFound />}/> */}
-      </Routes>
+          <Route path='*' element={<NotFound />}/>
+        </Routes>
+      </main>
+
     </div>
   );
 }
