@@ -1,0 +1,94 @@
+.nav {
+  display: flex;
+  width: 100%;
+  background-color: $nav-color;
+  position: relative;
+  justify-content: space-between;
+  text-align: center;
+  padding: 10px 25px;
+
+  &__logo {
+    width: 5rem;
+    border: 1px solid $nav-links;
+    border-radius: 50%;
+  }
+
+  &__links {
+    display: flex;
+    list-style: none;
+    margin: auto 0;
+  }
+
+  &__link {
+    margin: 0 5px;
+    color: $nav-links;
+    font-size: 20px;
+    text-decoration: none;
+    padding: 5px 10px;
+    letter-spacing: 1px;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: $nav-links-hover;
+    }
+    &:active {
+      position: relative;
+      top: 1px;
+    }
+
+    &:hover:nth-child(4) {
+      color: #e61212;
+      cursor: pointer;
+    }
+  }
+}
+
+.bar {
+  position: relative;
+  margin: auto;
+  display: none;
+
+  i {
+    position: absolute;
+    color: $white;
+    font-size: 35px;
+  }
+}
+
+@media screen and (max-width: 1070px)  {
+  .nav {
+    display: block;
+    padding: 0;
+
+    &__logo {
+      display: inline-block;
+      margin: 15px 3px;
+    }
+    &__links {
+      display: flex;
+      flex-direction: column;
+      background: $nav-links-background;
+      height: 0;
+      visibility: hidden;
+      transition: 0.3s;
+    }
+    &__link {
+      margin-top: 1.5rem;
+      text-align: center;
+      font-size: 28px;
+      padding: 25px;
+      display: block;
+    }
+  }
+  .bar {
+    display: block;
+    position: absolute;
+    top: 30px;
+    right: 80px;
+    cursor: pointer;
+  }
+}
+.nav__links.activeNav {
+  visibility: visible;
+  height: 465px;
+}

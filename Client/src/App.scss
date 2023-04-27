@@ -1,0 +1,24 @@
+.cardContainer {
+   display: flex;
+   justify-content: center;
+   flex-wrap: wrap;
+   gap: 2rem;
+}
+
+.filter {
+   display: flex;
+   justify-content: center;
+   gap: 2em;
+   margin-top: 2rem;
+
+   &__select {
+      border: 1px solid #0E95AC;
+      font-size: 1em;
+      color: #222;
+      width: 8rem;
+
+      &:hover {
+         cursor: pointer;
+      }
+   }
+}
