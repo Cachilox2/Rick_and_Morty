@@ -25,17 +25,17 @@ const Favorites = () => {
   return (
     <>
       <div className="filter" key={101}>
-        <select key={99} className="filter__select" onChange={handleOrder}>
+        <select className="filter__select" onChange={handleOrder}>
           {options1.map((op) => (
-            <option key={op.id} value={op.value}>
+            <option value={op.value}>
               {op.text}
             </option>
           ))}
         </select>
 
-        <select key={100} className="filter__select" onChange={handleFilter}>
+        <select className="filter__select" onChange={handleFilter}>
           {options2.map((op) => (
-            <option key={op.id} value={op.value}>
+            <option value={op.value}>
               {op.text}
             </option>
           ))}
