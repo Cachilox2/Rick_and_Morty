@@ -2,46 +2,52 @@ import {
   ADD_FAV,
   REMOVE_FAV,
   FILTER,
-  ORDER
+  ORDER,
+  REMOVE_CARD
 } from "../action-types/action-types";
 
 const initialState = {
   myFavorites: [],
-  allCharacters: [],
+  allCharactersFav: [],
 };
 
-const reducer = (state = initialState, action) => {
-  switch (action.type) {
+const reducer = (state = initialState, {type, payload}) => {
+  switch (type) {
     case ADD_FAV:
       return {
         ...state,
-        myFavorites: action.payload,
-        allCharacters: action.payload
-        // myFavorites: [...state.myFavorites, action.payload],
-        // allCharacters: [...state.myFavorites, action.payload]
+        myFavorites: payload,
+        allCharactersFav: payload
       };
     case REMOVE_FAV:
       return {
         ...state,
-        myFavorites: action.payload,
-        allCharacters: action.payload
+        myFavorites: payload,
+        allCharactersFav: payload
       };
+    case REMOVE_CARD:
+      return {
+        ...state,
+        myFavorites: state.myFavorites.filter((char => char.id !== payload)),
+        allCharactersFav: state.myFavorites.filter((char => char.id !== payload)),
+  
+      }
     case FILTER:
-      const filterChar = state.allCharacters.filter((char) => {
-        return char.gender === action.payload;
+      const filterChar = state.allCharactersFav.filter((char) => {
+        return char.gender === payload;
       });
 
       return {
         ...state,
-        myFavorites: action.payload === "All" ? [...state.allCharacters] : filterChar,
+        myFavorites: payload === "All" ? [...state.allCharactersFav] : filterChar,
       };
     case ORDER:
-      const allCharactersFavCopy = [...state.allCharacters];
+      const allCharactersFavCopy = [...state.allCharactersFav];
 
       return {
         ...state,
         myFavorites:
-          action.payload === "A"
+          payload === "A"
             ? allCharactersFavCopy.sort((a, b) => a.id - b.id)
             : allCharactersFavCopy.sort((a, b) => b.id - a.id),
       };

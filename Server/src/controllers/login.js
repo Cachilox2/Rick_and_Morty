@@ -1,23 +1,25 @@
-const users = require("../utils/users");
+require("dotenv").config();
+
+const DB_EMAIL = process.env.EMAIL;
+const DB_PASSWORD = process.env.PASSWORD;
 
 const login = (req, res) => {
-  const { email, password } = req.query;
+  try {
+    const { email, password } = req.query;
+    
+    // /login?password=1234&email=www
+    if (!email || !password) {
+      return res.status(400).json({ message: "Faltan datos" });
+    }
 
-  const user = users.find(
-    (user) => user.email === email && user.password === password
-  );
-
-  if(!email || !password) {
-    return res.status(500).json({message:"there isn't a password or email"})
-  }
-
-  if (user) {
-    return res.status(200).json({ access: true });
-  } else {
-    return res.status(404).json({ access: false });
+    if (password === DB_PASSWORD && email === DB_EMAIL) {
+      return res.status(200).json({ access: true });
+    } else {
+      return res.status(404).json({ access: false });
+    }
+  } catch (error) {
+    res.status(500).json({error: error.message})
   }
 };
 
-module.exports = {
-  login
-};
+module.exports = login;

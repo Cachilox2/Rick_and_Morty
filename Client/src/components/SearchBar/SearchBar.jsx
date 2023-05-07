@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { MdSearch } from "react-icons/md";
 
-const SearchBar = ({ onSearch }) => {
+const SearchBar = ({ onSearch, randomChar }) => {
   const [id, setId] = useState("");
 
   const handleChange = (event) => {
@@ -21,10 +21,12 @@ const SearchBar = ({ onSearch }) => {
         value={id}
         type="search"
       />
-
+      
       <span className="search__button" onClick={() => handleInput(id)}>
         <MdSearch className="icon-search" />
       </span>
+  
+      <button className="search__random" onClick={randomChar}>Random</button>
     </div>
   );
 };

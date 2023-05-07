@@ -40,10 +40,10 @@ function App() {
     navigate("/");
   };
 
-  // useEffect(() => {
-  //   !access && navigate("/");
+  useEffect(() => {
+    !access && navigate("/");
 
-  // }, [access, navigate]);
+  }, [access, navigate]);
 
   const onSearch = async (id) => {
     try {
@@ -67,6 +67,12 @@ function App() {
     }
   };
 
+  const randomChar = () => {
+    let random = Math.floor(Math.random() * 826) + 1;
+
+    onSearch(random)
+  }
+
   const onClose = (id) => {
     dispatch(removeFav(id))
     let character = Object.values(characters);
@@ -78,7 +84,7 @@ function App() {
 
   return (
     <div className="App">
-      {showNav && <Nav logOut={logOut} onSearch={onSearch} />}
+      {showNav && <Nav logOut={logOut} onSearch={onSearch} randomChar={randomChar} />}
 
       <main>
         <Routes>

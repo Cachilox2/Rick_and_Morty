@@ -5,7 +5,7 @@ import logo from "../../assets/nav-logo.webp";
 import {VscMenu, VscClose} from "react-icons/vsc"
 import {FiLogOut} from "react-icons/fi"
 
-const Nav = ({ onSearch, logOut }) => {
+const Nav = ({ onSearch, logOut, randomChar }) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
 
@@ -26,8 +26,8 @@ const Nav = ({ onSearch, logOut }) => {
       </NavLink>
 
 
-      <SearchBar onSearch={onSearch} />
-      
+      <SearchBar onSearch={onSearch} randomChar={randomChar} />
+
       <ul className={`nav__links ${menuOpen ? "activeNav" : ""}`}>
         <NavLink className="nav__link" to="/home">
           <li>Home</li>

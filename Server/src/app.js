@@ -5,6 +5,7 @@ const morgan = require("morgan")
 const router = require("./routes/index")
 
 server.use(express.json());
+server.use(express.urlencoded({ extended: false }));
 server.use(morgan("dev"));
 
 server.use((req, res, next) => {

@@ -18,13 +18,13 @@ const Card = ({
 
   const dispatch = useDispatch();
 
-  const allCharacters = useSelector((state) => state.allCharacters);
+  const allCharactersFav = useSelector((state) => state.allCharactersFav);
 
   const handleFavorite = () => {
     if (isFav) {
       setIsFav(false);
       dispatch(removeFav(id));
-    }else {
+    } else {
       setIsFav(true);
       dispatch(
         addFav({ id, name, status, species, gender, origin, image, onClose })
@@ -33,12 +33,12 @@ const Card = ({
   };
 
   useEffect(() => {
-    allCharacters.forEach((fav) => {
+    allCharactersFav.forEach((fav) => {
       if (fav.id === id) {
         setIsFav(true);
       }
     });
-  }, [allCharacters, id]);
+  }, [allCharactersFav, id]);
 
   return (
     <div className="card" key={id}>
@@ -47,20 +47,21 @@ const Card = ({
       ) : (
         <VscHeart className="card__heart" onClick={handleFavorite} />
       )}
-      
-      <VscClose className="card__close" onClick={() => onClose(id)} />
-      <img src={image} alt={name} />
 
-      <NavLink className="card__title" to={`/detail/${id}`}>
-        <h1>{name}</h1>
+      <VscClose className="card__close" onClick={() => onClose(id)} />
+
+
+      <NavLink  to={`/detail/${id}`}>
+        <img className="card__img" src={image} alt={name} />
+        <h1 className="card__title">{name}</h1>
       </NavLink>
 
-      <div className="card__information">
+      {/* <div className="card__information">
         <p>Status: {status}</p>
         <p>Species: {species}</p>
         <p>Gender: {gender}</p>
-        {/* <p>Location: {origin}</p> */}
-      </div>
+        <p>Location: {origin}</p>
+      </div> */}
     </div>
   );
 };
